@@ -1,0 +1,240 @@
+/* Global styles */
+/* The idea of separating structure (HTML) and presentation (CSS) follows the course slides. */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  line-height: 1.5;
+  color: #111;
+  background-color: #f7f7f7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Layout */
+
+.site-header,
+.site-footer {
+  background-color: #111;
+  color: #fff;
+  padding: 1rem;
+}
+
+.site-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.logo a {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.main-nav a[aria-current="page"] {
+  border-bottom: 2px solid #fff;
+}
+
+main {
+  padding: 1.5rem 1rem 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.site-footer {
+  text-align: center;
+}
+
+/* Buttons */
+
+.btn-primary,
+.btn-add-to-cart {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #e63946;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.btn-primary:hover,
+.btn-add-to-cart:hover {
+  background-color: #c71c30;
+}
+
+/* Home */
+
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #111, #333);
+  color: #fff;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  margin-bottom: 1rem;
+}
+
+.home-featured h2 {
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid-3 {
+  grid-template-columns: 1fr;
+}
+
+.card {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Products grid */
+
+.product-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.product-card {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  gap: 0.5rem;
+}
+
+.product-card h2 {
+  font-size: 1.1rem;
+}
+
+.product-price {
+  font-weight: bold;
+}
+
+.product-link {
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+
+/* Product detail */
+
+.product-detail-card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.product-detail-info h1 {
+  margin-bottom: 0.5rem;
+}
+
+.product-detail-info p {
+  margin-bottom: 1rem;
+}
+
+/* Cart */
+
+.cart-items {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cart-item {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cart-item-name {
+  font-weight: 600;
+}
+
+.cart-item-price {
+  justify-self: end;
+}
+
+.cart-item-remove {
+  margin-left: 1rem;
+  background-color: transparent;
+  color: #e63946;
+  border: 1px solid #e63946;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cart-summary {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Responsive breakpoints */
+/* From the responsive slides: @media screen and (min-width: 600px) { ... } */
+
+@media screen and (min-width: 600px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-detail-card {
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
